@@ -26,6 +26,7 @@ public class Customer {
         this.phone = phone;
         this.address = address;
         this.city = city;
+        System.out.println("Constructor ejecutado");
     }
 
     public void updateData(String firstName, String lastName, String email,
@@ -36,5 +37,9 @@ public class Customer {
         this.phone = phone;
         this.address = address;
         this.city = city;
+        System.out.println("updateData");
     }
 }
+
+
+
