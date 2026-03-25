@@ -1,0 +1,37 @@
+# Maven
+target/
+dependency-reduced-pom.xml
+
+# Compiled files
+*.class
+.idea/jb-workspace.xml
+# Packages
+*.jar
+*.war
+*.ear
+
+ms-customer/logs/
+
+# Logs
+*.log
+logs/
+
+# IDE - IntelliJ
+.idea/
+*.iml
+out/
+
+# IDE - Eclipse / STS
+.project
+.classpath
+.settings/
+.springBeans
+.sts4-cache/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+hs_err_pid*
+replay_pid*
