@@ -4,7 +4,7 @@ dependency-reduced-pom.xml
 
 # Compiled files
 *.class
-
+.idea/jb-workspace.xml
 # Packages
 *.jar
 *.war
