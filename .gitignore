@@ -1,49 +1,35 @@
+# Maven
 target/
-*.jar
-*.war
-*.ear
+dependency-reduced-pom.xml
+
+# Compiled files
 *.class
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
+# Packages
 *.jar
 *.war
 *.ear
-*.db
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# Logs
+*.log
+logs/
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
+# IDE - IntelliJ
+.idea/
 *.iml
-*.ipr
 out/
-/tatus
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
+# IDE - Eclipse / STS
+.project
+.classpath
+.settings/
+.springBeans
+.sts4-cache/
 
-### VS Code ###
+# VS Code
 .vscode/
 
-### Mac OS ###
+# OS
 .DS_Store
+hs_err_pid*
+replay_pid*
