@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4ea2d0a-dca4-4ce5-8e8f-a3d27242e5c9" name="Changes" comment="" />
+    <list default="true" id="c4ea2d0a-dca4-4ce5-8e8f-a3d27242e5c9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marco/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marco/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/common-exception-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/common-exception-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ms-customer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-customer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ms-customer/src/main/java/com/marco/mscustomer/exceptions/CustomerExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-customer/src/main/java/com/marco/mscustomer/exceptions/CustomerExceptionHandler.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

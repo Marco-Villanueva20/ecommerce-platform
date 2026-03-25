@@ -3,6 +3,7 @@ package com.marco.mscustomer.service;
 import com.marco.mscustomer.dto.CustomerRequest;
 import com.marco.mscustomer.dto.CustomerResponse;
 import com.marco.mscustomer.entity.Customer;
+import com.marco.mscustomer.exceptions.CustomerNotFoundException;
 import com.marco.mscustomer.mapper.CustomerMapper;
 import com.marco.mscustomer.repository.CustomerRepository;
 import jakarta.validation.Valid;
@@ -49,10 +50,13 @@ public class CustomerService {
     }
 
     public void deleteCustomerById(String customerId) {
+        if (!customerRepository.existsById(customerId)) {
+            throw new CustomerNotFoundException("Cannot delete: Customer with ID " + customerId + " not found");
+        }
         customerRepository.deleteById(customerId);
     }
 
     private Customer getCustomer(String customerId) {
-        return customerRepository.findById(customerId).orElse(null);
+        return customerRepository.findById(customerId).orElseThrow(() ->  CustomerNotFoundException.fromId(customerId));
     }
 }

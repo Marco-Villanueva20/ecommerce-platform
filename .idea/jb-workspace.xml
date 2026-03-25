@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="WorkspaceSettings">
-    <project name="ms-productos" path="$PROJECT_DIR$/ms-productos" />
     <project name="config-server" path="$PROJECT_DIR$/config-server" />
     <project name="discovery-server" path="$PROJECT_DIR$/discovery-server" />
     <project name="ms-customer" path="$PROJECT_DIR$/ms-customer" />
+    <project name="common-exception" path="$PROJECT_DIR$/common-exception" />
     <option name="workspace" value="true" />
   </component>
 </project>
