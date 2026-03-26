@@ -26,7 +26,7 @@ public class CategoryController {
     @PostMapping
     public ResponseEntity<CategoryResponse> createCategory(@RequestBody CategoryRequest request, UriComponentsBuilder ucb){
         CategoryResponse response = categoryService.create(request);
-        URI location = ucb.cloneBuilder().path("api/v1/categories/{id}").buildAndExpand(response.id).toUri();
+        URI location = ucb.cloneBuilder().path("api/v1/categories/{id}").buildAndExpand(response.id()).toUri();
         return ResponseEntity.created(location).body(response);
     }
 }

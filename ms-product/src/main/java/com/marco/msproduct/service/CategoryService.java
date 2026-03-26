@@ -16,9 +16,10 @@ public class CategoryService {
     private final CategoryMapper categoryMapper;
 
     public List<CategoryResponse> getAllCategories() {
-
+        return null;
     }
 
     public CategoryResponse create(CategoryRequest request) {
+        return null;
     }
 }
