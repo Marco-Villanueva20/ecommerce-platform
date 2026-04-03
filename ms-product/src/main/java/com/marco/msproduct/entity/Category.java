@@ -19,6 +19,7 @@ public class Category {
     private String name;
     private String description;
 
+
     /* Mapped by define al propietario quien tendrá el foránea */
     @OneToMany(mappedBy = "category",  fetch = FetchType.LAZY)
     private List<Product> products;
