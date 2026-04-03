@@ -25,4 +25,12 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
+
+
+    @PrePersist
+    public void prePersist(){
+        if (stock == null){
+            stock = 0;
+        }
+    }
 }
