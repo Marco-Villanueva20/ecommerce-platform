@@ -8,15 +8,21 @@ import org.springframework.stereotype.Component;
 @Component
 public class CategoryMapper {
 
-    public CategoryResponse toCategoryResponse(Category category)
-    {
-        return new CategoryResponse( category.getId(),category.getName(),category.getDescription(), category.getProducts().stream()
+    public CategoryResponse toCategoryResponse(Category category) {
+        return new CategoryResponse(
+                category.getId(),
+                category.getName(),
+                category.getDescription(),
+                category.getProducts().stream()
                 .map(ProductMapper::toProductResponse).toList());
     }
 
     public Category toCategory(CategoryRequest categoryRequest)
     {
-        return new Category(categoryRequest.name(),categoryRequest.description());
+        return new Category(
+                categoryRequest.name(),
+                categoryRequest.description()
+        );
 
     }
 
