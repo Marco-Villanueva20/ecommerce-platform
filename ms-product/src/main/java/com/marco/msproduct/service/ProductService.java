@@ -1,10 +1,13 @@
 package com.marco.msproduct.service;
 
+import com.marco.msproduct.dto.ProductQuantityRequest;
 import com.marco.msproduct.entity.Product;
 import com.marco.msproduct.exception.ProductException;
 import com.marco.msproduct.repository.ProductRepository;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -41,4 +44,27 @@ public class ProductService {
     }
 
 
+    @Transactional
+    public void restockProduct(@Valid List<ProductQuantityRequest> requests) {
+        requests.forEach(item->{
+                    Product product = findById(item.productId());
+
+                    product.reduceStock(item.quantity());
+                    productRepository.save(product);
+                }
+
+        );
+    }
+
+
+    @Transactional
+    public void purchaseProduct(@Valid List<ProductQuantityRequest> requests) {
+        requests.forEach(item -> {
+            Product product = findById(item.productId());
+
+            product.addStock(item.quantity());
+
+            productRepository.save(product);
+        });
+    }
 }

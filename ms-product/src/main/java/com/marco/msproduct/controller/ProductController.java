@@ -1,5 +1,6 @@
 package com.marco.msproduct.controller;
 
+import com.marco.msproduct.dto.ProductQuantityRequest;
 import com.marco.msproduct.dto.ProductRequest;
 import com.marco.msproduct.dto.ProductResponse;
 import com.marco.msproduct.entity.Product;
@@ -49,5 +50,18 @@ public class ProductController {
     public ResponseEntity<Void> delete(@PathVariable Long id){
         productService.deleteById(id);
         return ResponseEntity.noContent().build();
+    }
+
+
+    @PostMapping("/purchase")
+    public ResponseEntity<Void> purchaseProduct(@Valid @RequestBody List<ProductQuantityRequest> requests){
+        productService.purchaseProduct(requests);
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/restock")
+    public ResponseEntity<Void> updateProductStock(@Valid @RequestBody List<ProductQuantityRequest> requests){
+        productService.restockProduct(requests);
+        return ResponseEntity.ok().build();
     }
 }

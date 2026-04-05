@@ -1,5 +1,6 @@
 package com.marco.msproduct.entity;
 
+import com.marco.msproduct.exception.ProductException;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -49,6 +50,24 @@ public class Product {
         this.price = price;
         this.stock = stock;
         this.imageUrl = imageUrl;
+    }
+
+    public void reduceStock(Integer quantity) {
+        if (quantity == null || quantity <= 0) {
+            throw new ProductException("The quantity to reduce must be greater than zero.");
+        }
+        if (this.stock < quantity) {
+            throw new ProductException("Insufficient stock for product: " + this.name);
+        }
+        this.stock -= quantity;
+    }
+
+    public void addStock(Integer quantity) {
+        if (quantity == null || quantity <= 0) {
+            throw new ProductException("The quantity to add must be greater than zero.");
+        }
+        // Usamos += para sumar y asignar el nuevo valor
+        this.stock += quantity;
     }
 
 }
