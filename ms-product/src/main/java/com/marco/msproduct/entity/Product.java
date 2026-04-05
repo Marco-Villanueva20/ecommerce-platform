@@ -33,4 +33,22 @@ public class Product {
             stock = 0;
         }
     }
+
+    public Product(String name, String description, BigDecimal price, Integer stock, String imageUrl, Category category) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.stock = stock;
+        this.imageUrl = imageUrl;
+        this.category = category;
+    }
+
+    public void update(String name, String description, BigDecimal price, Integer stock, String imageUrl) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.stock = stock;
+        this.imageUrl = imageUrl;
+    }
+
 }
