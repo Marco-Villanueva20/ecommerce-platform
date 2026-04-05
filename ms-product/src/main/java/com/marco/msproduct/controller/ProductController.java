@@ -1,6 +1,7 @@
 package com.marco.msproduct.controller;
 
 import com.marco.msproduct.dto.ProductRequest;
+import com.marco.msproduct.dto.ProductResponse;
 import com.marco.msproduct.entity.Product;
 import com.marco.msproduct.mapper.ProductMapper;
 import com.marco.msproduct.service.ProductService;
@@ -12,6 +13,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -21,28 +23,31 @@ public class ProductController {
     private final ProductService productService;
     private final ProductMapper productMapper;
     @GetMapping("/{id}")
-    public ResponseEntity<Product> getById(@PathVariable Long id){
-        return null;
+    public ResponseEntity<ProductResponse> getById(@PathVariable Long id){
+        return ResponseEntity.ok(productMapper.toProductResponse(productService.findById(id)));
     }
 
     @PostMapping
     public ResponseEntity<Long> create(@Valid @RequestBody ProductRequest request, UriComponentsBuilder ucb){
-        URI location = ucb.cloneBuilder().path("api/v1/products/{id}").buildAndExpand(12).toUri();
-        return null;
+        Product product = productService.save(productMapper.toProduct(request));
+        URI location = ucb.cloneBuilder().path("api/v1/products/{id}").buildAndExpand(product.getId()).toUri();
+        return ResponseEntity.created(location).body(product.getId());
     }
 
     @GetMapping
-    public ResponseEntity<List<Product>> getAll(){
-        return null;
+    public ResponseEntity<List<ProductResponse>> getAll(){
+        return ResponseEntity.ok(productService.findAll().stream().map(productMapper::toProductResponse).toList());
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Void> update(@PathVariable Long id, @RequestBody ProductRequest request){
-        return null;
+        productService.update(productMapper.toProduct(request), id);
+        return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id){
-        return null;
+        productService.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 }
