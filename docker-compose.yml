@@ -19,7 +19,7 @@ services:
     image: postgres:18
     restart: always
     environment:
-      POSTGRES_USER: ${POSTGRES_DB_USERNAME}
+      POSTGRES_USER: ${POSTGRESQL_DB_USERNAME}
       POSTGRES_PASSWORD: ${POSTGRESQL_DB_PASSWORD}
       POSTGRES_DB: ${PRODUCT_DB_NAME}
       PGDATA: /var/lib/postgresql/18/docker
